@@ -76,7 +76,7 @@
     <Button
         android:id="@+id/button"
         android:layout_width="184dp"
-        android:layout_height="53dp"
+        android:layout_height="67dp"
         android:layout_marginTop="36dp"
         android:backgroundTint="@color/pink"
         android:onClick="signup"
