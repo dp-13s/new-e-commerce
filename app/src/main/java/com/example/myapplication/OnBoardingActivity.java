@@ -1,7 +1,9 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -15,6 +17,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.viewpager.widget.ViewPager;
+import com.example.myapplication.SliderAdapter;
 
 public class OnBoardingActivity extends AppCompatActivity {
 
@@ -36,7 +39,7 @@ public class OnBoardingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_on_boarding);
 
         //hide toolbar
-        getSupportActionBar().hide();
+
 
         viewPager = findViewById(R.id.slider);
         dotsLayout = findViewById(R.id.dots);
@@ -47,6 +50,12 @@ public class OnBoardingActivity extends AppCompatActivity {
 
         sliderAdapter = new SliderAdapter(this);
         viewPager.setAdapter(sliderAdapter);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(OnBoardingActivity.this,RegistrationActivity.class));
+            }
+        });
     }
 
     private void addDots(int position){
