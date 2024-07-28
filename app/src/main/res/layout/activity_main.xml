@@ -78,6 +78,7 @@
                     tools:layout_editor_absoluteY="49dp" />
             </LinearLayout>
 
+
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -179,6 +180,15 @@
 
                 </LinearLayout>
             </HorizontalScrollView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="7dp"
+                android:layout_margin="7dp"
+                android:text="Latest Offers"
+                android:textSize="25dp"
+                android:textStyle="bold"/>
 
             <ViewFlipper
                 android:layout_width="match_parent"
@@ -374,6 +384,59 @@
                         android:background="@drawable/item_selector_background_2"/>
 
             </TableLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TRENDING THIS WEEK"
+                    android:textSize="30dp"
+                    android:gravity="center"
+                    android:fontFamily="@font/aclonica"
+                    android:padding="7dp"
+                    android:layout_margin="25dp"
+                    android:textColor="#FF5722"/>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="40dp">
+
+                        <ImageButton
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            android:layout_margin="10dp"/>
+                        <ImageButton
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            android:layout_margin="10dp"/>
+                        <ImageButton
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            android:layout_margin="10dp"/>
+                        <ImageButton
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            android:layout_margin="10dp"/>
+                        <ImageButton
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            android:layout_margin="10dp"/>
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+
+            </LinearLayout>
 
         </LinearLayout>
 
