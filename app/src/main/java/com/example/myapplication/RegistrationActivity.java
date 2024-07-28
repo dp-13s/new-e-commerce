@@ -44,6 +44,22 @@ public class RegistrationActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
 
+        sharedPreferences = getSharedPreferences("onBoardingScreen",MODE_PRIVATE);
+
+        boolean isFirstTIme = sharedPreferences.getBoolean("firstTime",true);
+
+        if (isFirstTIme){
+
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean("firstTime",false);
+            editor.commit();
+
+            Intent intent = new Intent(RegistrationActivity.this,OnBoardingActivity.class);
+            startActivity(intent);
+            finish();
+
+        }
+
     }
     public  void signup(View view){
 
