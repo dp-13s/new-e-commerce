@@ -377,7 +377,7 @@
                 </TableRow>
 
                     <ImageButton
-                        android:id="@+id/c6"
+                        android:id="@+id/cat7"
 
                         android:layout_width="380dp"
                         android:layout_height="80dp"
@@ -413,22 +413,27 @@
                         android:layout_marginBottom="40dp">
 
                         <ImageButton
+                            android:id="@+id/d1"
                             android:layout_width="140dp"
                             android:layout_height="140dp"
                             android:layout_margin="10dp"/>
                         <ImageButton
+                            android:id="@+id/d2"
                             android:layout_width="140dp"
                             android:layout_height="140dp"
                             android:layout_margin="10dp"/>
                         <ImageButton
+                            android:id="@+id/d3"
                             android:layout_width="140dp"
                             android:layout_height="140dp"
                             android:layout_margin="10dp"/>
                         <ImageButton
+                            android:id="@+id/d4"
                             android:layout_width="140dp"
                             android:layout_height="140dp"
                             android:layout_margin="10dp"/>
                         <ImageButton
+                            android:id="@+id/d5"
                             android:layout_width="140dp"
                             android:layout_height="140dp"
                             android:layout_margin="10dp"/>
