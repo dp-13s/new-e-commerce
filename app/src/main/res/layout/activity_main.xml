@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/top_background"
                 android:orientation="vertical"
-                android:paddingTop="20dp"
+                android:paddingTop="40dp"
                 android:paddingBottom="20dp">
 
                 <LinearLayout
