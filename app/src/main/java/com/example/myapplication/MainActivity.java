@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         search_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Toast.makeText(MainActivity.this,"Search Button Pressed",Toast.LENGTH_SHORT).show();
             }
         });
 
