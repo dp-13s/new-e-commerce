@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     ImageButton imge1,imge2,imge3,imge4,imge5;
 
-    String sub[]={"Data Structure","Computer Architecture","DBMS","Operating System","Computer Network"};
+    String sub[]={"Clothing","Footwear","Groceries","Beauty Products","Electronics","Home and Kitchen Appliances","Medicine"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,13 +50,80 @@ public class MainActivity extends AppCompatActivity {
         img10=findViewById(R.id.b10);
         img11=findViewById(R.id.b11);
         image1=findViewById(R.id.c1);
+        image1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this,Categories.class);
+                String str = "Clothing";
+                intent1.putExtra("Data",str);
+                startActivity(intent1);
+            }
+        });
+
         image2=findViewById(R.id.c2);
+        image2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this,Categories.class);
+                String str = "Footwear";
+                intent1.putExtra("Data",str);
+                startActivity(intent1);
+            }
+        });
+
         image3=findViewById(R.id.c3);
+        image3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this,Categories.class);
+                String str = "Groceries";
+                intent1.putExtra("Data",str);
+                startActivity(intent1);
+            }
+        });
+
         image4=findViewById(R.id.c4);
+        image4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this,Categories.class);
+                String str = "Beauty Products";
+                intent1.putExtra("Data",str);
+                startActivity(intent1);
+            }
+        });
+
         image5=findViewById(R.id.c5);
+        image5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this,Categories.class);
+                String str = "Electronics";
+                intent1.putExtra("Data",str);
+                startActivity(intent1);
+            }
+        });
         image6=findViewById(R.id.c6);
+        image6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this,Categories.class);
+                String str = "Home and Kitchen Appliances";
+                intent1.putExtra("Data",str);
+                startActivity(intent1);
+            }
+        });
 
         image7 =findViewById(R.id.cat7);
+        image7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this,Categories.class);
+                String str = "Medicine";
+                intent1.putExtra("Data",str);
+                startActivity(intent1);
+            }
+        });
 
         imge1=findViewById(R.id.d1);
         imge2=findViewById(R.id.d2);
@@ -64,17 +132,23 @@ public class MainActivity extends AppCompatActivity {
         imge5=findViewById(R.id.d5);
 
 
-        search_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(MainActivity.this,"Search Button Pressed",Toast.LENGTH_SHORT).show();
-            }
-        });
+
 
 
         ArrayAdapter<String> adapter=new ArrayAdapter<String>(this, android.R.layout.select_dialog_item,sub);
         search.setThreshold(1);
         search.setAdapter(adapter);
+
+        search_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String data = "Showing results for ";
+                data = data.concat(search.getText().toString());
+                Intent intent1 = new Intent(MainActivity.this,Categories.class);
+                intent1.putExtra("Data",data);
+                startActivity(intent1);
+            }
+        });
 
     }
 }
