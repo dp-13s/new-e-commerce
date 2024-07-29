@@ -315,11 +315,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="7dp"
                 android:layout_margin="7dp"
+                android:padding="7dp"
                 android:text="Categories"
                 android:textSize="25dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -338,13 +338,14 @@
                         android:layout_width="190dp"
                         android:layout_height="80dp"
                         android:layout_margin="7dp"
-                        android:background="@drawable/item_selector_background"/>
+                        android:background="@drawable/clothes" />
+
                     <ImageButton
                         android:id="@+id/c2"
                         android:layout_width="190dp"
                         android:layout_height="80dp"
                         android:layout_margin="7dp"
-                        android:background="@drawable/item_selector_background"/>
+                        android:background="@drawable/footware" />
                 </TableRow>
 
                 <TableRow
@@ -360,13 +361,14 @@
                         android:layout_width="190dp"
                         android:layout_height="80dp"
                         android:layout_margin="7dp"
-                        android:background="@drawable/item_selector_background"/>
+                        android:background="@drawable/groceries" />
+
                     <ImageButton
                         android:id="@+id/c4"
                         android:layout_width="190dp"
                         android:layout_height="80dp"
                         android:layout_margin="7dp"
-                        android:background="@drawable/item_selector_background"/>
+                        android:background="@drawable/makeup" />
                 </TableRow>
 
                 <TableRow
@@ -382,22 +384,23 @@
                         android:layout_width="190dp"
                         android:layout_height="80dp"
                         android:layout_margin="7dp"
-                        android:background="@drawable/item_selector_background"/>
+                        android:background="@drawable/electronics" />
+
                     <ImageButton
                         android:id="@+id/c6"
                         android:layout_width="190dp"
                         android:layout_height="80dp"
                         android:layout_margin="7dp"
-                        android:background="@drawable/item_selector_background"/>
+                        android:background="@drawable/home___kitchen" />
                 </TableRow>
 
-                    <ImageButton
-                        android:id="@+id/cat7"
+                <ImageButton
+                    android:id="@+id/cat7"
 
-                        android:layout_width="380dp"
-                        android:layout_height="80dp"
-                        android:layout_margin="7dp"
-                        android:background="@drawable/item_selector_background_2"/>
+                    android:layout_width="380dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/medicine" />
 
             </TableLayout>
 
