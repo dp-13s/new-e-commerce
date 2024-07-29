@@ -1,6 +1,11 @@
 package com.example.myapplication;
 
+import static com.example.myapplication.R.id.Home;
+import static com.example.myapplication.R.id.Profile;
+import static com.example.myapplication.R.id.Menu;
+
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -11,6 +16,11 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.example.myapplication.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,10 +35,12 @@ public class MainActivity extends AppCompatActivity {
 
     ImageButton imge1,imge2,imge3,imge4,imge5;
 
+    ActivityMainBinding binding;
 
 
     String sub[]={"Data Structure","Computer Architecture","DBMS","Operating System","Computer Network"};
 
+    @SuppressLint({"MissingInflatedId","NonConstantResourceId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,8 +68,7 @@ public class MainActivity extends AppCompatActivity {
         image4=findViewById(R.id.c4);
         image5=findViewById(R.id.c5);
         image6=findViewById(R.id.c6);
-
-        image7 =findViewById(R.id.cat7);
+        image7=findViewById(R.id.c7);
 
         imge1=findViewById(R.id.d1);
         imge2=findViewById(R.id.d2);
@@ -66,12 +77,100 @@ public class MainActivity extends AppCompatActivity {
         imge5=findViewById(R.id.d5);
 
 
+
         search_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this,"Search Button Pressed",Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Search Button Pressed", Toast.LENGTH_SHORT).show();
+
+            }
+
+
+        });
+
+        image1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Category1.class);
+                startActivity(intent);
             }
         });
+
+        image2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this, Category2.class);
+                startActivity(intent1);
+            }
+        });
+
+        image3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = new Intent(MainActivity.this, Category3.class);
+                startActivity(intent2);
+            }
+        });
+
+        image4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent3 = new Intent(MainActivity.this, Category4.class);
+                startActivity(intent3);
+            }
+        });
+
+        image5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent4 = new Intent(MainActivity.this, Category5.class);
+                startActivity(intent4);
+            }
+        });
+
+        image6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent5 = new Intent(MainActivity.this, Category6.class);
+                startActivity(intent5);
+            }
+        });
+
+        image7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent6 = new Intent(MainActivity.this, Category7.class);
+                startActivity(intent6);
+            }
+        });
+
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        replaceFragment(new HomeFragment());
+
+        binding.bottomNavigationView.setOnItemSelectedListener(item -> {
+
+            switch (item.getItemId()) {
+
+                case R.id.Home:
+                    replaceFragment(new HomeFragment());
+                   break;
+
+
+                   case Profile:
+                       replaceFragment(new ProfileFragment());
+                       break;
+
+
+                case Menu:
+                    replaceFragment(new MenuFragment());
+                    break;
+            }
+
+            return true;
+        });
+
 
 
         ArrayAdapter<String> adapter=new ArrayAdapter<String>(this, android.R.layout.select_dialog_item,sub);
@@ -79,5 +178,12 @@ public class MainActivity extends AppCompatActivity {
         search.setAdapter(adapter);
 
 
+    }
+    private void replaceFragment(Fragment fragment){
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frame_Layout,fragment);
+        fragmentTransaction.commit();
     }
 }
