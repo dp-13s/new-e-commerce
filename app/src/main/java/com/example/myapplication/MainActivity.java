@@ -20,13 +20,13 @@ public class MainActivity extends AppCompatActivity {
 
     TextView address;
 
-    ImageButton img1,img2,img3,img4,img5,img6,img7,img8,img9,img10,img11;
+    ImageButton img1,img2,img3,img4,img5,img6,img7,img8,img9,img10,img11,img12,img13,img14;
 
     ImageButton image1,image2,image3,image4,image5,image6,image7;
 
     ImageButton imge1,imge2,imge3,imge4,imge5;
 
-    String sub[]={"Clothing","Footwear","Groceries","Beauty Products","Electronics","Home and Kitchen Appliances","Medicine"};
+    String sub[]={"Clothing","Footwear","Shoes","Groceries","Beauty Products","Electronics","Home and Kitchen Appliances","Medicine","Men's Clothing","Women's Clothing","Kids Clothing","Men's Footwear","Women's Footwear","Kids Footwear","Phones","Laptops","Electronic Accessories","Makeup Products","Fruits","Vegetables","Dairy Products","Cereals","Grains","Pulses","Home Appliances","Decoration Items","Kitchen Appliances","Medicine"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
 
         img10=findViewById(R.id.b10);
         img11=findViewById(R.id.b11);
+        img12=findViewById(R.id.b12);
+        img13=findViewById(R.id.b13);
+        img14=findViewById(R.id.b14);
         image1=findViewById(R.id.c1);
         image1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,10 +133,6 @@ public class MainActivity extends AppCompatActivity {
         imge3=findViewById(R.id.d3);
         imge4=findViewById(R.id.d4);
         imge5=findViewById(R.id.d5);
-
-
-
-
 
         ArrayAdapter<String> adapter=new ArrayAdapter<String>(this, android.R.layout.select_dialog_item,sub);
         search.setThreshold(1);

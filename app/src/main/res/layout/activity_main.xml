@@ -107,91 +107,113 @@
 
                     <ImageButton
                         android:id="@+id/b1"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
                         android:layout_margin="7dp"
                         android:background="@drawable/list_item_icon_border"
-                        android:src="@drawable/milk" />
+                        android:src="@drawable/womenclothing" />
 
                     <ImageButton
                         android:id="@+id/b2"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
                         android:layout_margin="7dp"
                         android:background="@drawable/list_item_icon_border"
-                        android:src="@drawable/milk" />
-
-                    <ImageButton
-                        android:id="@+id/b3"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_margin="7dp"
-                        android:background="@drawable/list_item_icon_border"
-                        android:src="@drawable/milk" />
-
-                    <ImageButton
-                        android:id="@+id/b4"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_margin="7dp"
-                        android:background="@drawable/list_item_icon_border"
-                        android:src="@drawable/milk" />
-
-                    <ImageButton
-                        android:id="@+id/b5"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_margin="7dp"
-                        android:background="@drawable/list_item_icon_border"
-                        android:src="@drawable/milk" />
-
-                    <ImageButton
-                        android:id="@+id/b6"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_margin="7dp"
-                        android:background="@drawable/list_item_icon_border"
-                        android:src="@drawable/milk" />
-
-                    <ImageButton
-                        android:id="@+id/b7"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_margin="7dp"
-                        android:background="@drawable/list_item_icon_border"
-                        android:src="@drawable/milk" />
-
-                    <ImageButton
-                        android:id="@+id/b8"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_margin="7dp"
-                        android:background="@drawable/list_item_icon_border"
-                        android:src="@drawable/milk" />
-
-                    <ImageButton
-                        android:id="@+id/b9"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_margin="7dp"
-                        android:background="@drawable/list_item_icon_border"
-                        android:src="@drawable/milk" />
+                        android:src="@drawable/womenfootwear" />
 
                     <ImageButton
                         android:id="@+id/b10"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
                         android:layout_margin="7dp"
                         android:background="@drawable/list_item_icon_border"
-                        android:src="@drawable/milk" />
+                        android:src="@drawable/mensclothing" />
 
                     <ImageButton
                         android:id="@+id/b11"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
                         android:layout_margin="7dp"
                         android:background="@drawable/list_item_icon_border"
-                        android:src="@drawable/milk" />
+                        android:src="@drawable/menfootwear" />
+
+                    <ImageButton
+                        android:id="@+id/b12"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_margin="7dp"
+                        android:background="@drawable/list_item_icon_border"
+                        android:src="@drawable/kiddress" />
+                    <ImageButton
+                        android:id="@+id/b13"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_margin="7dp"
+                        android:background="@drawable/list_item_icon_border"
+                        android:src="@drawable/kidshoe" />
+
+                    <ImageButton
+                        android:id="@+id/b3"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_margin="7dp"
+                        android:background="@drawable/list_item_icon_border"
+                        android:src="@drawable/fruits" />
+
+                    <ImageButton
+                        android:id="@+id/b4"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_margin="7dp"
+                        android:background="@drawable/list_item_icon_border"
+                        android:src="@drawable/vegetable" />
+
+                    <ImageButton
+                        android:id="@+id/b5"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_margin="7dp"
+                        android:background="@drawable/list_item_icon_border"
+                        android:src="@drawable/makeup" />
+                    <ImageButton
+                        android:id="@+id/b14"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_margin="7dp"
+                        android:background="@drawable/list_item_icon_border"
+                        android:src="@drawable/laptop" />
+
+                    <ImageButton
+                        android:id="@+id/b6"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_margin="7dp"
+                        android:background="@drawable/list_item_icon_border"
+                        android:src="@drawable/phone" />
+
+                    <ImageButton
+                        android:id="@+id/b7"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_margin="7dp"
+                        android:background="@drawable/list_item_icon_border"
+                        android:src="@drawable/accessories" />
+
+                    <ImageButton
+                        android:id="@+id/b8"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_margin="7dp"
+                        android:background="@drawable/list_item_icon_border"
+                        android:src="@drawable/soap" />
+
+                    <ImageButton
+                        android:id="@+id/b9"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_margin="7dp"
+                        android:background="@drawable/list_item_icon_border"
+                        android:src="@drawable/dairy" />
 
                 </LinearLayout>
             </HorizontalScrollView>
@@ -335,13 +357,14 @@
 
                     <ImageButton
                         android:id="@+id/c1"
-                        android:layout_width="190dp"
+                        android:layout_width="170dp"
                         android:layout_height="80dp"
                         android:layout_margin="7dp"
-                        android:background="@drawable/item_selector_background"/>
+                        android:background="@drawable/item_selector_background" />
+
                     <ImageButton
                         android:id="@+id/c2"
-                        android:layout_width="190dp"
+                        android:layout_width="170dp"
                         android:layout_height="80dp"
                         android:layout_margin="7dp"
                         android:background="@drawable/item_selector_background"/>
@@ -357,13 +380,13 @@
 
                     <ImageButton
                         android:id="@+id/c3"
-                        android:layout_width="190dp"
+                        android:layout_width="170dp"
                         android:layout_height="80dp"
                         android:layout_margin="7dp"
                         android:background="@drawable/item_selector_background"/>
                     <ImageButton
                         android:id="@+id/c4"
-                        android:layout_width="190dp"
+                        android:layout_width="170dp"
                         android:layout_height="80dp"
                         android:layout_margin="7dp"
                         android:background="@drawable/item_selector_background"/>
@@ -379,13 +402,13 @@
 
                     <ImageButton
                         android:id="@+id/c5"
-                        android:layout_width="190dp"
+                        android:layout_width="170dp"
                         android:layout_height="80dp"
                         android:layout_margin="7dp"
                         android:background="@drawable/item_selector_background"/>
                     <ImageButton
                         android:id="@+id/c6"
-                        android:layout_width="190dp"
+                        android:layout_width="170dp"
                         android:layout_height="80dp"
                         android:layout_margin="7dp"
                         android:background="@drawable/item_selector_background"/>
