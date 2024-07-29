@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     ImageButton imge1,imge2,imge3,imge4,imge5;
 
-    private ImageButton c1,c2,c3,c4,c5,c6,c7;
+    //private ImageButton c1,c2,c3,c4,c5,c6,c7;
 
 
     String sub[]={"Data Structure","Computer Architecture","DBMS","Operating System","Computer Network"};
@@ -79,11 +79,6 @@ public class MainActivity extends AppCompatActivity {
         search.setThreshold(1);
         search.setAdapter(adapter);
 
-        c1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(MainActivity.this,"Category 1 Pressed",Toast.LENGTH_SHORT).show();
-            }
 
     }
 }
