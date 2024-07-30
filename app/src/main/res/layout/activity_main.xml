@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
     <ScrollView
+        android:id="@+id/scrollView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -72,8 +73,8 @@
                             android:id="@+id/search_btn"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:src="@drawable/baseline_search_24"
-                            android:background="@drawable/none"/>
+                            android:background="@drawable/none"
+                            android:src="@drawable/baseline_search_24" />
 
                     </LinearLayout>
 
@@ -144,6 +145,7 @@
                         android:layout_margin="7dp"
                         android:background="@drawable/list_item_icon_border"
                         android:src="@drawable/kiddress" />
+
                     <ImageButton
                         android:id="@+id/b13"
                         android:layout_width="90dp"
@@ -175,6 +177,7 @@
                         android:layout_margin="7dp"
                         android:background="@drawable/list_item_icon_border"
                         android:src="@drawable/makeup" />
+
                     <ImageButton
                         android:id="@+id/b14"
                         android:layout_width="90dp"
@@ -221,11 +224,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="7dp"
                 android:layout_margin="7dp"
+                android:padding="7dp"
                 android:text="Latest Offers"
                 android:textSize="25dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <ViewFlipper
                 android:layout_width="match_parent"
@@ -261,72 +264,74 @@
                     app:srcCompat="@drawable/banner2" />
             </ViewFlipper>
 
-<!--            <ScrollView-->
-<!--                android:layout_width="380dp"-->
-<!--                android:layout_height="160dp"-->
-<!--                tools:layout_editor_absoluteX="16dp"-->
-<!--                tools:layout_editor_absoluteY="348dp">-->
+            <!--            <ScrollView-->
+            <!--                android:layout_width="380dp"-->
+            <!--                android:layout_height="160dp"-->
+            <!--                tools:layout_editor_absoluteX="16dp"-->
+            <!--                tools:layout_editor_absoluteY="348dp">-->
 
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:orientation="horizontal">-->
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:orientation="horizontal">-->
 
-<!--                    <ImageView-->
-<!--                        android:id="@+id/imageView4"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_weight="1"-->
-<!--                        app:srcCompat="@drawable/banner1" />-->
+            <!--                    <ImageView-->
+            <!--                        android:id="@+id/imageView4"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_weight="1"-->
+            <!--                        app:srcCompat="@drawable/banner1" />-->
 
-<!--                    <ImageView-->
-<!--                        android:id="@+id/imageView5"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_weight="1"-->
-<!--                        app:srcCompat="@drawable/banner2" />-->
+            <!--                    <ImageView-->
+            <!--                        android:id="@+id/imageView5"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_weight="1"-->
+            <!--                        app:srcCompat="@drawable/banner2" />-->
 
-<!--                    <ImageView-->
-<!--                        android:id="@+id/imageView6"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_weight="1"-->
-<!--                        app:srcCompat="@drawable/banner3" />-->
-<!--                </LinearLayout>-->
-<!--            </ScrollView>-->
-\
+            <!--                    <ImageView-->
+            <!--                        android:id="@+id/imageView6"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_weight="1"-->
+            <!--                        app:srcCompat="@drawable/banner3" />-->
+            <!--                </LinearLayout>-->
+            <!--            </ScrollView>-->
+            \
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:background="@drawable/border"
-                    android:padding="10dp"
                     android:layout_width="130dp"
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
-                    android:text="   FREE DELIVERY ON FIRST ORDER"
-                    android:textSize="10dp"
+                    android:background="@drawable/border"
                     android:drawableLeft="@drawable/baseline_delivery_dining_24"
-                    android:textStyle="bold" />
-                <TextView
                     android:padding="10dp"
-                    android:background="@drawable/border"
-                    android:layout_width="130dp"
-                    android:layout_margin="5dp"
-                    android:layout_height="match_parent"
-                    android:text="PAY ON      DELIVERY"
-                    android:drawableLeft="@drawable/baseline_payment_24"
+                    android:text="   FREE DELIVERY ON FIRST ORDER"
                     android:textSize="10dp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:padding="10dp"
-                    android:drawableLeft="@drawable/baseline_keyboard_return_24"
+                    android:layout_width="130dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
                     android:background="@drawable/border"
+                    android:drawableLeft="@drawable/baseline_payment_24"
+                    android:padding="10dp"
+                    android:text="PAY ON      DELIVERY"
+                    android:textSize="10dp"
+                    android:textStyle="bold" />
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
+                    android:background="@drawable/border"
+                    android:drawableLeft="@drawable/baseline_keyboard_return_24"
+                    android:padding="10dp"
                     android:text="EASY RETURNS"
                     android:textSize="10dp"
                     android:textStyle="bold" />
@@ -337,11 +342,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="7dp"
                 android:layout_margin="7dp"
+                android:padding="7dp"
                 android:text="Categories"
                 android:textSize="25dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -350,8 +355,8 @@
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
                     android:layout_margin="4dp"
+                    android:gravity="center"
                     android:padding="3dp">
 
 
@@ -367,14 +372,14 @@
                         android:layout_width="170dp"
                         android:layout_height="80dp"
                         android:layout_margin="7dp"
-                        android:background="@drawable/item_selector_background"/>
+                        android:background="@drawable/item_selector_background" />
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
                     android:layout_margin="4dp"
+                    android:gravity="center"
                     android:padding="3dp">
 
 
@@ -383,20 +388,21 @@
                         android:layout_width="170dp"
                         android:layout_height="80dp"
                         android:layout_margin="7dp"
-                        android:background="@drawable/item_selector_background"/>
+                        android:background="@drawable/item_selector_background" />
+
                     <ImageButton
                         android:id="@+id/c4"
                         android:layout_width="170dp"
                         android:layout_height="80dp"
                         android:layout_margin="7dp"
-                        android:background="@drawable/item_selector_background"/>
+                        android:background="@drawable/item_selector_background" />
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
                     android:layout_margin="4dp"
+                    android:gravity="center"
                     android:padding="3dp">
 
 
@@ -405,22 +411,23 @@
                         android:layout_width="170dp"
                         android:layout_height="80dp"
                         android:layout_margin="7dp"
-                        android:background="@drawable/item_selector_background"/>
+                        android:background="@drawable/item_selector_background" />
+
                     <ImageButton
                         android:id="@+id/c6"
                         android:layout_width="170dp"
                         android:layout_height="80dp"
                         android:layout_margin="7dp"
-                        android:background="@drawable/item_selector_background"/>
+                        android:background="@drawable/item_selector_background" />
                 </TableRow>
 
-                    <ImageButton
-                        android:id="@+id/cat7"
+                <ImageButton
+                    android:id="@+id/cat7"
 
-                        android:layout_width="380dp"
-                        android:layout_height="80dp"
-                        android:layout_margin="7dp"
-                        android:background="@drawable/item_selector_background_2"/>
+                    android:layout_width="380dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="7dp"
+                    android:background="@drawable/item_selector_background_2" />
 
             </TableLayout>
 
@@ -433,13 +440,13 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TRENDING THIS WEEK"
-                    android:textSize="30dp"
-                    android:gravity="center"
-                    android:fontFamily="@font/aclonica"
-                    android:padding="7dp"
                     android:layout_margin="25dp"
-                    android:textColor="#FF5722"/>
+                    android:fontFamily="@font/aclonica"
+                    android:gravity="center"
+                    android:padding="7dp"
+                    android:text="TRENDING THIS WEEK"
+                    android:textColor="#FF5722"
+                    android:textSize="30dp" />
 
                 <HorizontalScrollView
                     android:layout_width="match_parent"
@@ -454,27 +461,31 @@
                             android:id="@+id/d1"
                             android:layout_width="140dp"
                             android:layout_height="140dp"
-                            android:layout_margin="10dp"/>
+                            android:layout_margin="10dp" />
+
                         <ImageButton
                             android:id="@+id/d2"
                             android:layout_width="140dp"
                             android:layout_height="140dp"
-                            android:layout_margin="10dp"/>
+                            android:layout_margin="10dp" />
+
                         <ImageButton
                             android:id="@+id/d3"
                             android:layout_width="140dp"
                             android:layout_height="140dp"
-                            android:layout_margin="10dp"/>
+                            android:layout_margin="10dp" />
+
                         <ImageButton
                             android:id="@+id/d4"
                             android:layout_width="140dp"
                             android:layout_height="140dp"
-                            android:layout_margin="10dp"/>
+                            android:layout_margin="10dp" />
+
                         <ImageButton
                             android:id="@+id/d5"
                             android:layout_width="140dp"
                             android:layout_height="140dp"
-                            android:layout_margin="10dp"/>
+                            android:layout_margin="10dp" />
 
                     </LinearLayout>
                 </HorizontalScrollView>
@@ -485,6 +496,20 @@
         </LinearLayout>
 
     </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:id="@+id/profile"
+        android:layout_height="wrap_content"
+        android:layout_margin="34dp"
+        android:src="@drawable/baseline_person_24"
+        app:backgroundTint="@color/teal_200"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.975" />
 
     <!--            <ImageView-->
         <!--                android:id="@+id/imageView"-->

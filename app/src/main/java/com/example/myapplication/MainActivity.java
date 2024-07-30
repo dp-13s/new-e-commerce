@@ -13,10 +13,14 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class MainActivity extends AppCompatActivity {
 
     AutoCompleteTextView search;
     ImageButton search_button;
+
+    FloatingActionButton profile;
 
     TextView address;
 
@@ -146,6 +150,16 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(MainActivity.this,Categories.class);
                 intent1.putExtra("Data",data);
                 startActivity(intent1);
+            }
+        });
+
+        profile = findViewById(R.id.profile);
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,Profile.class);
+                startActivity(intent);
+                finish();
             }
         });
 
