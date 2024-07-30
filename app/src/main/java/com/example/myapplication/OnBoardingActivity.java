@@ -27,7 +27,7 @@ public class OnBoardingActivity extends AppCompatActivity {
 
     TextView[] dots;
     Animation animation;
-    Button btn;
+    Button btn,skip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +39,8 @@ public class OnBoardingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_on_boarding);
 
         //hide toolbar
+
+        skip = findViewById(R.id.next_btn);
 
 
         viewPager = findViewById(R.id.slider);
@@ -57,7 +59,15 @@ public class OnBoardingActivity extends AppCompatActivity {
                 finish();
             }
         });
+        skip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(OnBoardingActivity.this,RegistrationActivity.class));
+                finish();
+            }
+        });
     }
+
 
     private void addDots(int position){
 

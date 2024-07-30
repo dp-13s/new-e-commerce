@@ -1,13 +1,14 @@
 {
   "project_info": {
     "project_number": "571008142985",
+    "firebase_url": "https://e-commerce-7d610-default-rtdb.firebaseio.com",
     "project_id": "e-commerce-7d610",
     "storage_bucket": "e-commerce-7d610.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:571008142985:android:20e3361c29e70e8c048058",
+        "mobilesdk_app_id": "1:571008142985:android:e35ce49c2964a661048058",
         "android_client_info": {
           "package_name": "com.example.myapplication"
         }

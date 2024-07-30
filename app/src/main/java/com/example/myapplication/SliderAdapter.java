@@ -38,8 +38,8 @@ public class SliderAdapter extends PagerAdapter {
 
     int descriptionArray[] = {
             R.string.description,
-            R.string.description,
-            R.string.description
+            R.string.description2,
+            R.string.description3
     };
 
     @Override

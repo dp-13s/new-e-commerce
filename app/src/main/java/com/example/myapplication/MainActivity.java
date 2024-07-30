@@ -42,20 +42,158 @@ public class MainActivity extends AppCompatActivity {
         search = findViewById(R.id.search_bar);
         address = findViewById(R.id.textView3);
         img1=findViewById(R.id.b1);
+        img1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this,Categories.class);
+                String str = "Women's Clothing";
+                intent1.putExtra("Data",str);
+                startActivity(intent1);
+            }
+        });
+
         img2=findViewById(R.id.b2);
+        img2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this,Categories.class);
+                String str = "Women's Footwear";
+                intent1.putExtra("Data",str);
+                startActivity(intent1);
+            }
+        });
+
         img3=findViewById(R.id.b3);
+        img3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this,Categories.class);
+                String str = "Fruits";
+                intent1.putExtra("Data",str);
+                startActivity(intent1);
+            }
+        });
+
         img4=findViewById(R.id.b4);
+        img4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this,Categories.class);
+                String str = "Vegetables";
+                intent1.putExtra("Data",str);
+                startActivity(intent1);
+            }
+        });
+
         img5=findViewById(R.id.b5);
+        img5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this,Categories.class);
+                String str = "Makeup Products";
+                intent1.putExtra("Data",str);
+                startActivity(intent1);
+            }
+        });
+
         img6=findViewById(R.id.b6);
+        img6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this,Categories.class);
+                String str = "Smart Phones";
+                intent1.putExtra("Data",str);
+                startActivity(intent1);
+            }
+        });
+
         img7=findViewById(R.id.b7);
+        img7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this,Categories.class);
+                String str = "Electronic Accessories";
+                intent1.putExtra("Data",str);
+                startActivity(intent1);
+            }
+        });
+
         img8=findViewById(R.id.b8);
+        img8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this,Categories.class);
+                String str = "Soap";
+                intent1.putExtra("Data",str);
+                startActivity(intent1);
+            }
+        });
         img9=findViewById(R.id.b9);
+        img9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this,Categories.class);
+                String str = "Dairy Products";
+                intent1.putExtra("Data",str);
+                startActivity(intent1);
+            }
+        });
 
         img10=findViewById(R.id.b10);
+        img10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this,Categories.class);
+                String str = "Men's Clothing";
+                intent1.putExtra("Data",str);
+                startActivity(intent1);
+            }
+        });
+
         img11=findViewById(R.id.b11);
+        img11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this,Categories.class);
+                String str = "Men's Footwear";
+                intent1.putExtra("Data",str);
+                startActivity(intent1);
+            }
+        });
+
         img12=findViewById(R.id.b12);
+        img12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this,Categories.class);
+                String str = "Kids Clothing";
+                intent1.putExtra("Data",str);
+                startActivity(intent1);
+            }
+        });
+
         img13=findViewById(R.id.b13);
+        img13.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this,Categories.class);
+                String str = "Kids Footwear";
+                intent1.putExtra("Data",str);
+                startActivity(intent1);
+            }
+        });
+
         img14=findViewById(R.id.b14);
+        img14.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this,Categories.class);
+                String str = "Laptops";
+                intent1.putExtra("Data",str);
+                startActivity(intent1);
+            }
+        });
+
         image1=findViewById(R.id.c1);
         image1.setOnClickListener(new View.OnClickListener() {
             @Override

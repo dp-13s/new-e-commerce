@@ -359,20 +359,56 @@
                     android:gravity="center"
                     android:padding="3dp">
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
-                    <ImageButton
-                        android:id="@+id/c1"
-                        android:layout_width="170dp"
-                        android:layout_height="80dp"
-                        android:layout_margin="7dp"
-                        android:background="@drawable/item_selector_background" />
+                        <ImageButton
+                            android:id="@+id/c1"
+                            android:layout_width="170dp"
+                            android:layout_height="80dp"
+                            android:layout_margin="7dp"
+                            android:src="@drawable/clothing"
+                            android:background="@drawable/item_selector_background"/>
 
-                    <ImageButton
-                        android:id="@+id/c2"
-                        android:layout_width="170dp"
-                        android:layout_height="80dp"
-                        android:layout_margin="7dp"
-                        android:background="@drawable/item_selector_background" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:text="Clothing"
+                            android:textSize="16dp"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/c2"
+                            android:layout_width="170dp"
+                            android:layout_height="80dp"
+                            android:layout_margin="7dp"
+                            android:src="@drawable/footwear"
+                            android:background="@drawable/item_selector_background" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:text="Footwear"
+                            android:textSize="16dp"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+
+                    </LinearLayout>
+
                 </TableRow>
 
                 <TableRow
@@ -382,20 +418,55 @@
                     android:gravity="center"
                     android:padding="3dp">
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
-                    <ImageButton
-                        android:id="@+id/c3"
-                        android:layout_width="170dp"
-                        android:layout_height="80dp"
-                        android:layout_margin="7dp"
-                        android:background="@drawable/item_selector_background" />
+                        <ImageButton
+                            android:id="@+id/c3"
+                            android:layout_width="170dp"
+                            android:layout_height="80dp"
+                            android:layout_margin="7dp"
+                            android:src="@drawable/groceries"
+                            android:background="@drawable/item_selector_background" />
 
-                    <ImageButton
-                        android:id="@+id/c4"
-                        android:layout_width="170dp"
-                        android:layout_height="80dp"
-                        android:layout_margin="7dp"
-                        android:background="@drawable/item_selector_background" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:text="Groceries"
+                            android:textSize="16dp"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/c4"
+                            android:layout_width="170dp"
+                            android:layout_height="80dp"
+                            android:layout_margin="7dp"
+                            android:src="@drawable/beauty"
+                            android:background="@drawable/item_selector_background" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:text="Beauty Products"
+                            android:textSize="16dp"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+
+                    </LinearLayout>
+
                 </TableRow>
 
                 <TableRow
@@ -405,29 +476,81 @@
                     android:gravity="center"
                     android:padding="3dp">
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
-                    <ImageButton
-                        android:id="@+id/c5"
-                        android:layout_width="170dp"
-                        android:layout_height="80dp"
-                        android:layout_margin="7dp"
-                        android:background="@drawable/item_selector_background" />
+                        <ImageButton
+                            android:id="@+id/c5"
+                            android:layout_width="170dp"
+                            android:layout_height="80dp"
+                            android:layout_margin="7dp"
+                            android:src="@drawable/electronics"
+                            android:background="@drawable/item_selector_background" />
 
-                    <ImageButton
-                        android:id="@+id/c6"
-                        android:layout_width="170dp"
-                        android:layout_height="80dp"
-                        android:layout_margin="7dp"
-                        android:background="@drawable/item_selector_background" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:text="Electronics"
+                            android:textSize="16dp"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/c6"
+                            android:layout_width="170dp"
+                            android:layout_height="80dp"
+                            android:layout_margin="7dp"
+                            android:src="@drawable/homeandkitchen"
+                            android:background="@drawable/item_selector_background" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:text="Home  Appliances"
+                            android:textSize="16dp"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+
+
+                    </LinearLayout>
+
                 </TableRow>
 
-                <ImageButton
-                    android:id="@+id/cat7"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-                    android:layout_width="380dp"
-                    android:layout_height="80dp"
-                    android:layout_margin="7dp"
-                    android:background="@drawable/item_selector_background_2" />
+                    <ImageButton
+                        android:id="@+id/cat7"
+                        android:src="@drawable/medicine"
+                        android:layout_width="380dp"
+                        android:layout_height="80dp"
+                        android:layout_margin="7dp"
+                        android:background="@drawable/item_selector_background_2" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:text="Medicine"
+                        android:textSize="16dp"
+                        android:gravity="center"
+                        android:textStyle="bold"/>
+
+
+                </LinearLayout>
 
             </TableLayout>
 
