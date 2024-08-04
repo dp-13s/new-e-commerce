@@ -1,10 +1,14 @@
 package com.example.myapplication;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,22 +19,41 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 
 public class MainAdapter extends FirebaseRecyclerAdapter<categorymodel,MainAdapter.myViewHolder> {
 
+
+    android.content.Context context;
+
+    private final RecyclerViewInterface recyclerViewInterface;
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
      * {@link FirebaseRecyclerOptions} for configuration options.
      *
      * @param options
      */
-    public MainAdapter(@NonNull FirebaseRecyclerOptions<categorymodel> options) {
+    public MainAdapter(@NonNull Context context, FirebaseRecyclerOptions<categorymodel> options, RecyclerViewInterface recyclerViewInterface) {
         super(options);
+        this.recyclerViewInterface = recyclerViewInterface;
+        this.context=context;
     }
 
     @Override
     protected void onBindViewHolder(@NonNull myViewHolder holder, int position, @NonNull categorymodel model) {
 
+        holder.itemView.setOnClickListener(v->{
+
+            Intent intent = new Intent(context,ItemDetails.class);
+            intent.putExtra("name",model.getName());
+            intent.putExtra("price",model.getPrice());
+            intent.putExtra("description",model.getDescription());
+            intent.putExtra("image",model.getImage());
+            context.startActivity(intent);
+
+        });
+
+
         holder.name.setText(model.getName());
         holder.price.setText(model.getPrice());
         holder.desc.setText(model.getDescription());
+
 
         Glide.with(holder.image.getContext())
                 .load(model.getImage())
@@ -53,6 +76,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<categorymodel,MainAdapt
 
         ImageView image;
         TextView name,price,desc;
+        AdapterView.OnItemClickListener listener;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -62,6 +86,18 @@ public class MainAdapter extends FirebaseRecyclerAdapter<categorymodel,MainAdapt
             price = (TextView) itemView.findViewById(R.id.product_price);
             desc = (TextView) itemView.findViewById(R.id.product_des);
 
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (recyclerViewInterface != null){
+                        int position = getBindingAdapterPosition();
+
+                        if (position != RecyclerView.NO_POSITION){
+                            recyclerViewInterface.onItemClick(position);
+                        }
+                    }
+                }
+            });
         }
     }
 }

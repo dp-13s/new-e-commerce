@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -30,15 +31,17 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
-public class Categories extends AppCompatActivity {
+public class Categories extends AppCompatActivity implements RecyclerViewInterface{
 
     TextView heading;
+    categorymodel categoryModel;
+
+    private FirebaseRecyclerOptions<categorymodel> options;
 
     AutoCompleteTextView search;
     ImageButton search_button;
 
     String sub[]={"Clothing","Footwear","Shoes","Groceries","Beauty Products","Electronics","Home and Kitchen Appliances","Medicine","Men's Clothing","Women's Clothing","Kids Clothing","Men's Footwear","Women's Footwear","Kids Footwear","Phones","Laptops","Electronic Accessories","Makeup Products","Fruits","Vegetables","Dairy Products","Cereals","Grains","Pulses","Home Appliances","Decoration Items","Kitchen Appliances","Medicine"};
-
 
     RecyclerView recyclerView;
     MainAdapter mainAdapter;
@@ -74,13 +77,14 @@ public class Categories extends AppCompatActivity {
         recyclerView = findViewById(R.id.rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        FirebaseRecyclerOptions<categorymodel> options =
+        options =
                 new FirebaseRecyclerOptions.Builder<categorymodel>()
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("Chargers"), categorymodel.class)
                         .build();
 
-        mainAdapter = new MainAdapter(options);
+        mainAdapter = new MainAdapter(this,options,this);
         recyclerView.setAdapter(mainAdapter);
+
     }
 
     @Override
@@ -93,5 +97,16 @@ public class Categories extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         mainAdapter.stopListening();
+    }
+
+    @Override
+    public void onItemClick(int position) {
+
+
+//        Intent intent = new Intent(Categories.this,ItemDetails.class);
+//        intent.putExtra("name",options.getSnapshots().toString());
+//        intent.putExtra("price",);
+//        intent.putExtra("description",);
+//        intent.putExtra("image",);
     }
 }

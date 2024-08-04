@@ -14,11 +14,14 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.bumptech.glide.Glide;
+
 public class ItemDetails extends AppCompatActivity {
 
     ImageView image;
 
-    TextView title,description,quantity;
+    TextView title,descriptions,quantity;
+    TextView prices;
 
     ImageButton remove,add;
 
@@ -31,12 +34,23 @@ public class ItemDetails extends AppCompatActivity {
         setContentView(R.layout.activity_item_details);
 
         image = findViewById(R.id.item_image);
+        prices=findViewById(R.id.item_price);
         title = findViewById(R.id.item_name);
-        description = findViewById(R.id.item_description);
+        descriptions = findViewById(R.id.item_description);
         quantity = findViewById(R.id.quantity);
         remove = findViewById(R.id.subtract);
         add = findViewById(R.id.add);
         order = findViewById(R.id.order_button);
+
+        String name = getIntent().getStringExtra("name");
+        String price = getIntent().getStringExtra("price");
+        String description = getIntent().getStringExtra("description");
+        String image_url = getIntent().getStringExtra("image");
+
+        title.setText(name);
+        prices.setText(price);
+        descriptions.setText(description);
+        Glide.with(this).load(image_url).into(image);
 
 
         remove.setOnClickListener(new View.OnClickListener() {
