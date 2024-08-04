@@ -20,8 +20,7 @@ public class ItemDetails extends AppCompatActivity {
 
     ImageView image;
 
-    TextView title,descriptions,quantity;
-    TextView prices;
+    TextView title,descriptions,quantity,prices;
 
     ImageButton remove,add;
 
