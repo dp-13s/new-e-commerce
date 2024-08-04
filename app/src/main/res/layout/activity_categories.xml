@@ -27,7 +27,6 @@
             android:paddingBottom="20dp">
 
             <LinearLayout
-                android:layout_margin="7dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -48,7 +47,7 @@
                     android:background="@drawable/border">
 
                     <AutoCompleteTextView
-                        android:id="@+id/search_bar"
+                        android:id="@+id/search_bar2"
                         android:layout_width="196dp"
                         android:layout_height="47dp"
                         android:layout_gravity="center"
@@ -61,7 +60,7 @@
 
                     <ImageButton
 
-                        android:id="@+id/search_btn"
+                        android:id="@+id/search_btn2"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/none"
@@ -95,10 +94,14 @@
             android:textSize="25dp"
             android:textStyle="bold"/>
 
-        <ListView
-            android:layout_margin="7dp"
+        <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:id="@+id/rv"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="50dp"/>
 
     </LinearLayout>
 
