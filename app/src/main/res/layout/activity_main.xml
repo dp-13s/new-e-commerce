@@ -540,6 +540,7 @@
                         android:layout_margin="7dp"
                         android:background="@drawable/item_selector_background_2" />
 
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -549,6 +550,28 @@
                         android:gravity="center"
                         android:textStyle="bold"/>
 
+                </LinearLayout><LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/cat8"
+                        android:src="@drawable/books"
+                        android:layout_width="380dp"
+                        android:layout_height="80dp"
+                        android:layout_margin="7dp"
+                        android:background="@drawable/item_selector_background_2" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:text="Books"
+                        android:textSize="16dp"
+                        android:gravity="center"
+                        android:textStyle="bold"/>
 
                 </LinearLayout>
 
@@ -582,29 +605,34 @@
 
                         <ImageButton
                             android:id="@+id/d1"
+                            android:src="@drawable/ada"
                             android:layout_width="140dp"
                             android:layout_height="140dp"
                             android:layout_margin="10dp" />
 
                         <ImageButton
                             android:id="@+id/d2"
+                            android:src="@drawable/adb"
                             android:layout_width="140dp"
                             android:layout_height="140dp"
                             android:layout_margin="10dp" />
 
                         <ImageButton
+                            android:src="@drawable/adc"
                             android:id="@+id/d3"
                             android:layout_width="140dp"
                             android:layout_height="140dp"
                             android:layout_margin="10dp" />
 
                         <ImageButton
+                            android:src="@drawable/add"
                             android:id="@+id/d4"
                             android:layout_width="140dp"
                             android:layout_height="140dp"
                             android:layout_margin="10dp" />
 
                         <ImageButton
+                            android:src="@drawable/ade"
                             android:id="@+id/d5"
                             android:layout_width="140dp"
                             android:layout_height="140dp"
