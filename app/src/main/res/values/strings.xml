@@ -1,4 +1,35 @@
 <resources>
+    <string-array name="my_array">
+        <item>Clothing</item>
+        <item>Footwear</item>
+        <item>Shoes</item>
+        <item>Groceries</item>
+        <item>Beauty Products</item>
+        <item>Electronics</item>
+        <item>Home and Kitchen Appliances</item>
+        <item>Medicine</item>
+        <item>Men\'s Clothing</item>
+        <item>Women\'s Clothing</item>
+        <item>Kids Clothing</item>
+        <item>Men\'s Footwear</item>
+        <item>Women\'s Footwear</item>
+        <item>Kids Footwear</item>
+        <item>Phones</item>
+        <item>Laptop</item>
+        <item>Electronic Accessories</item>
+        <item>Makeup Products</item>
+        <item>Fruits</item>
+        <item>Vegetables</item>
+        <item>Dairy Products</item>
+        <item>Cereals</item>
+        <item>Grains</item>
+        <item>Pulses</item>
+        <item>Home Appliances</item>
+        <item>Decoration Items</item>
+        <item>Kitchen Appliances</item>
+        <item>Chargers</item>
+        <item>Earphones</item>
+    </string-array>
     <string name="app_name">New E Commerce Application</string>
 
     <string name="first_slide">Choose Your Products</string>

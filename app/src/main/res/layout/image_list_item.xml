@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:text="item name"
                 android:textStyle="bold"
-                android:textSize="25dp"/>
+                android:textSize="18dp"/>
 
             <TextView
                 android:id="@+id/product_price"

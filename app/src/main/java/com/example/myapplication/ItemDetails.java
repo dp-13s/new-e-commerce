@@ -56,7 +56,7 @@ public class ItemDetails extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int val = Integer.parseInt(quantity.getText().toString());
-                if(val>0){
+                if(val>1){
                     val = val - 1;
                     quantity.setText(String.valueOf(val));
                 }

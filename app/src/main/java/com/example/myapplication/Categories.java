@@ -30,18 +30,21 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Categories extends AppCompatActivity implements RecyclerViewInterface{
 
     TextView heading;
     categorymodel categoryModel;
 
-    private FirebaseRecyclerOptions<categorymodel> options;
+    DatabaseReference chargersRef = FirebaseDatabase.getInstance().getReference().child("Chargers");
+    DatabaseReference earphonesRef = FirebaseDatabase.getInstance().getReference().child("Earphones");
+
+    String[] sub;
 
     AutoCompleteTextView search;
     ImageButton search_button;
-
-    String sub[]={"Clothing","Footwear","Shoes","Groceries","Beauty Products","Electronics","Home and Kitchen Appliances","Medicine","Men's Clothing","Women's Clothing","Kids Clothing","Men's Footwear","Women's Footwear","Kids Footwear","Phones","Laptops","Electronic Accessories","Makeup Products","Fruits","Vegetables","Dairy Products","Cereals","Grains","Pulses","Home Appliances","Decoration Items","Kitchen Appliances","Medicine"};
+    List<categorymodel> combinedList = new ArrayList<>();
 
     RecyclerView recyclerView;
     MainAdapter mainAdapter;
@@ -55,6 +58,8 @@ public class Categories extends AppCompatActivity implements RecyclerViewInterfa
         search_button = findViewById(R.id.search_btn2);
         search = findViewById(R.id.search_bar2);
 
+
+        sub = getResources().getStringArray(R.array.my_array);
         ArrayAdapter<String> adapter=new ArrayAdapter<String>(this, android.R.layout.select_dialog_item,sub);
         search.setThreshold(1);
         search.setAdapter(adapter);
@@ -62,8 +67,7 @@ public class Categories extends AppCompatActivity implements RecyclerViewInterfa
         search_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String data = "Showing results for ";
-                data = data.concat(search.getText().toString());
+                String data = search.getText().toString();
                 Intent intent1 = new Intent(Categories.this,Categories.class);
                 intent1.putExtra("Data",data);
                 startActivity(intent1);
@@ -71,15 +75,17 @@ public class Categories extends AppCompatActivity implements RecyclerViewInterfa
         });
 
         String data = getIntent().getStringExtra("Data");
+
         heading = findViewById(R.id.heading);
-        heading.setText(data);
+        String n = "Showing results for ";
+        heading.setText(n.concat(data));
 
         recyclerView = findViewById(R.id.rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        options =
+        FirebaseRecyclerOptions<categorymodel> options =
                 new FirebaseRecyclerOptions.Builder<categorymodel>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Chargers"), categorymodel.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child(data), categorymodel.class)
                         .build();
 
         mainAdapter = new MainAdapter(this,options,this);

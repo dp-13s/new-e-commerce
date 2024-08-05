@@ -26,11 +26,11 @@ public class MainActivity extends AppCompatActivity {
 
     ImageButton img1,img2,img3,img4,img5,img6,img7,img8,img9,img10,img11,img12,img13,img14;
 
-    ImageButton image1,image2,image3,image4,image5,image6,image7;
+    ImageButton image1,image2,image3,image4,image5,image6,image7,image8;
 
     ImageButton imge1,imge2,imge3,imge4,imge5;
 
-    String sub[]={"Clothing","Footwear","Shoes","Groceries","Beauty Products","Electronics","Home and Kitchen Appliances","Medicine","Men's Clothing","Women's Clothing","Kids Clothing","Men's Footwear","Women's Footwear","Kids Footwear","Phones","Laptops","Electronic Accessories","Makeup Products","Fruits","Vegetables","Dairy Products","Cereals","Grains","Pulses","Home Appliances","Decoration Items","Kitchen Appliances","Medicine"};
+    String sub[];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -270,12 +270,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        image8 = findViewById(R.id.cat8);
+        image8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this,Categories.class);
+                String str = "Books";
+                intent1.putExtra("Data",str);
+                startActivity(intent1);
+            }
+        });
+
         imge1=findViewById(R.id.d1);
         imge2=findViewById(R.id.d2);
         imge3=findViewById(R.id.d3);
         imge4=findViewById(R.id.d4);
         imge5=findViewById(R.id.d5);
 
+        sub = getResources().getStringArray(R.array.my_array);
         ArrayAdapter<String> adapter=new ArrayAdapter<String>(this, android.R.layout.select_dialog_item,sub);
         search.setThreshold(1);
         search.setAdapter(adapter);
@@ -283,8 +295,7 @@ public class MainActivity extends AppCompatActivity {
         search_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String data = "Showing results for ";
-                data = data.concat(search.getText().toString());
+                String data = search.getText().toString();
                 Intent intent1 = new Intent(MainActivity.this,Categories.class);
                 intent1.putExtra("Data",data);
                 startActivity(intent1);
