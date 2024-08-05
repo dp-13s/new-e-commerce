@@ -28,6 +28,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,10 +38,8 @@ public class Categories extends AppCompatActivity implements RecyclerViewInterfa
     TextView heading;
     categorymodel categoryModel;
 
-    DatabaseReference chargersRef = FirebaseDatabase.getInstance().getReference().child("Chargers");
-    DatabaseReference earphonesRef = FirebaseDatabase.getInstance().getReference().child("Earphones");
-
     String[] sub;
+    List<categorymodel> categoryList;
 
     AutoCompleteTextView search;
     ImageButton search_button;
@@ -75,7 +74,6 @@ public class Categories extends AppCompatActivity implements RecyclerViewInterfa
         });
 
         String data = getIntent().getStringExtra("Data");
-
         heading = findViewById(R.id.heading);
         String n = "Showing results for ";
         heading.setText(n.concat(data));
@@ -83,36 +81,1045 @@ public class Categories extends AppCompatActivity implements RecyclerViewInterfa
         recyclerView = findViewById(R.id.rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        FirebaseRecyclerOptions<categorymodel> options =
-                new FirebaseRecyclerOptions.Builder<categorymodel>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child(data), categorymodel.class)
-                        .build();
+        switch (data){
 
-        mainAdapter = new MainAdapter(this,options,this);
-        recyclerView.setAdapter(mainAdapter);
 
+            case "Home and Kitchen Appliances":{
+
+                DatabaseReference node1Ref = FirebaseDatabase.getInstance().getReference("Bed");
+                DatabaseReference node2Ref = FirebaseDatabase.getInstance().getReference("Sofa");
+                DatabaseReference node3Ref = FirebaseDatabase.getInstance().getReference("Air Fryer");
+                DatabaseReference node4Ref = FirebaseDatabase.getInstance().getReference("Cooker");
+                DatabaseReference node5Ref = FirebaseDatabase.getInstance().getReference("Gas Stove");
+                DatabaseReference node6Ref = FirebaseDatabase.getInstance().getReference("Microwave Oven");
+                DatabaseReference node7Ref = FirebaseDatabase.getInstance().getReference("Pan");
+                DatabaseReference node8Ref = FirebaseDatabase.getInstance().getReference("Refridgerator");
+                DatabaseReference node9Ref = FirebaseDatabase.getInstance().getReference("Spatula");
+                DatabaseReference node10Ref = FirebaseDatabase.getInstance().getReference("Television");
+                DatabaseReference node11Ref = FirebaseDatabase.getInstance().getReference("Washing Machine");
+
+                // Combined list to hold data from all nodes
+                List<categorymodel> combinedList = new ArrayList<>();
+
+                // Counter to track completion
+                final int[] nodesFetched = {0};
+                final int totalNodes = 11;
+
+                // Function to check if all nodes have been fetched
+                ValueEventListener checkCompletionListener = new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        nodesFetched[0]++;
+
+                        // Check if all nodes have been processed
+                        if (nodesFetched[0] == totalNodes) {
+                            // Set up the adapter with the combined data
+                            MainAdapter mainAdapter = new MainAdapter(Categories.this, combinedList, Categories.this);
+                            recyclerView.setAdapter(mainAdapter);
+                            mainAdapter.notifyDataSetChanged();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        // Handle possible errors
+                        Toast.makeText(Categories.this, "Error fetching data: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                };
+
+                // Fetch data from each node
+                node1Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            if (item != null) {
+                                combinedList.add(item);
+                            }
+                        }
+                        checkCompletionListener.onDataChange(dataSnapshot);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        checkCompletionListener.onCancelled(databaseError);
+                    }
+                });
+
+                node2Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            if (item != null) {
+                                combinedList.add(item);
+                            }
+                        }
+                        checkCompletionListener.onDataChange(dataSnapshot);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        checkCompletionListener.onCancelled(databaseError);
+                    }
+                });
+
+                node3Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            if (item != null) {
+                                combinedList.add(item);
+                            }
+                        }
+                        checkCompletionListener.onDataChange(dataSnapshot);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        checkCompletionListener.onCancelled(databaseError);
+                    }
+                });
+
+                node4Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            if (item != null) {
+                                combinedList.add(item);
+                            }
+                        }
+                        checkCompletionListener.onDataChange(dataSnapshot);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        checkCompletionListener.onCancelled(databaseError);
+                    }
+                });
+
+                node5Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            if (item != null) {
+                                combinedList.add(item);
+                            }
+                        }
+                        checkCompletionListener.onDataChange(dataSnapshot);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        checkCompletionListener.onCancelled(databaseError);
+                    }
+                });
+
+                node6Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            if (item != null) {
+                                combinedList.add(item);
+                            }
+                        }
+                        checkCompletionListener.onDataChange(dataSnapshot);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        checkCompletionListener.onCancelled(databaseError);
+                    }
+                });
+
+                node7Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            if (item != null) {
+                                combinedList.add(item);
+                            }
+                        }
+                        checkCompletionListener.onDataChange(dataSnapshot);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        checkCompletionListener.onCancelled(databaseError);
+                    }
+                });
+
+                node8Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            if (item != null) {
+                                combinedList.add(item);
+                            }
+                        }
+                        checkCompletionListener.onDataChange(dataSnapshot);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        checkCompletionListener.onCancelled(databaseError);
+                    }
+                });
+
+                node9Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            if (item != null) {
+                                combinedList.add(item);
+                            }
+                        }
+                        checkCompletionListener.onDataChange(dataSnapshot);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        checkCompletionListener.onCancelled(databaseError);
+                    }
+                });
+
+                node10Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            if (item != null) {
+                                combinedList.add(item);
+                            }
+                        }
+                        checkCompletionListener.onDataChange(dataSnapshot);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        checkCompletionListener.onCancelled(databaseError);
+                    }
+                });
+
+                node1Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            if (item != null) {
+                                combinedList.add(item);
+                            }
+                        }
+                        checkCompletionListener.onDataChange(dataSnapshot);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        checkCompletionListener.onCancelled(databaseError);
+                    }
+                });
+
+                node11Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            if (item != null) {
+                                combinedList.add(item);
+                            }
+                        }
+                        checkCompletionListener.onDataChange(dataSnapshot);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        checkCompletionListener.onCancelled(databaseError);
+                    }
+                });
+
+                break;
+
+            }
+
+            case "Electronic Accessories":{
+
+                DatabaseReference node1Ref = FirebaseDatabase.getInstance().getReference("Chargers");
+                DatabaseReference node2Ref = FirebaseDatabase.getInstance().getReference("Earphones");
+                DatabaseReference node3Ref = FirebaseDatabase.getInstance().getReference("Headset");
+
+
+                List<categorymodel> combinedList = new ArrayList<>();
+
+                // Counter to track completion
+                final int[] nodesFetched = {0};
+                final int totalNodes = 3;
+
+                // Function to check if all nodes have been fetched
+                ValueEventListener checkCompletionListener = new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        nodesFetched[0]++;
+
+                        // Check if all nodes have been processed
+                        if (nodesFetched[0] == totalNodes) {
+                            // Set up the adapter with the combined data
+                            MainAdapter mainAdapter = new MainAdapter(Categories.this, combinedList, Categories.this);
+                            recyclerView.setAdapter(mainAdapter);
+                            mainAdapter.notifyDataSetChanged();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        // Handle possible errors
+                        Toast.makeText(Categories.this, "Error fetching data: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                };
+
+                // Fetch data from each node
+                node1Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            if (item != null) {
+                                combinedList.add(item);
+                            }
+                        }
+                        checkCompletionListener.onDataChange(dataSnapshot);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        checkCompletionListener.onCancelled(databaseError);
+                    }
+                });
+
+                node2Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            if (item != null) {
+                                combinedList.add(item);
+                            }
+                        }
+                        checkCompletionListener.onDataChange(dataSnapshot);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        checkCompletionListener.onCancelled(databaseError);
+                    }
+                });
+
+                node3Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            if (item != null) {
+                                combinedList.add(item);
+                            }
+                        }
+                        checkCompletionListener.onDataChange(dataSnapshot);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        checkCompletionListener.onCancelled(databaseError);
+                    }
+                });
+                break;
+            }
+
+            case "Electronics":{
+
+                DatabaseReference node1Ref = FirebaseDatabase.getInstance().getReference("Chargers");
+                DatabaseReference node2Ref = FirebaseDatabase.getInstance().getReference("Earphones");
+                DatabaseReference node3Ref = FirebaseDatabase.getInstance().getReference("Headset");
+                DatabaseReference node4Ref = FirebaseDatabase.getInstance().getReference("Laptop");
+                DatabaseReference node5Ref = FirebaseDatabase.getInstance().getReference("Phones");
+                DatabaseReference node6Ref = FirebaseDatabase.getInstance().getReference("Tabs");
+                DatabaseReference node7Ref = FirebaseDatabase.getInstance().getReference("Air Fryer");
+                DatabaseReference node8Ref = FirebaseDatabase.getInstance().getReference("Microwave Oven");
+                DatabaseReference node9Ref = FirebaseDatabase.getInstance().getReference("Refridgerator");
+                DatabaseReference node10Ref = FirebaseDatabase.getInstance().getReference("Television");
+                DatabaseReference node11Ref = FirebaseDatabase.getInstance().getReference("Washing Machine");
+
+                // Combined list to hold data from all nodes
+                List<categorymodel> combinedList = new ArrayList<>();
+
+                // Counter to track completion
+                final int[] nodesFetched = {0};
+                final int totalNodes = 11;
+
+                // Function to check if all nodes have been fetched
+                ValueEventListener checkCompletionListener = new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        nodesFetched[0]++;
+
+                        // Check if all nodes have been processed
+                        if (nodesFetched[0] == totalNodes) {
+                            // Set up the adapter with the combined data
+                            MainAdapter mainAdapter = new MainAdapter(Categories.this, combinedList, Categories.this);
+                            recyclerView.setAdapter(mainAdapter);
+                            mainAdapter.notifyDataSetChanged();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        // Handle possible errors
+                        Toast.makeText(Categories.this, "Error fetching data: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                };
+
+                // Fetch data from each node
+                node1Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            if (item != null) {
+                                combinedList.add(item);
+                            }
+                        }
+                        checkCompletionListener.onDataChange(dataSnapshot);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        checkCompletionListener.onCancelled(databaseError);
+                    }
+                });
+
+                node7Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            if (item != null) {
+                                combinedList.add(item);
+                            }
+                        }
+                        checkCompletionListener.onDataChange(dataSnapshot);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        checkCompletionListener.onCancelled(databaseError);
+                    }
+                });
+
+                node8Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            if (item != null) {
+                                combinedList.add(item);
+                            }
+                        }
+                        checkCompletionListener.onDataChange(dataSnapshot);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        checkCompletionListener.onCancelled(databaseError);
+                    }
+                });
+
+                node9Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            if (item != null) {
+                                combinedList.add(item);
+                            }
+                        }
+                        checkCompletionListener.onDataChange(dataSnapshot);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        checkCompletionListener.onCancelled(databaseError);
+                    }
+                });
+
+                node10Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            if (item != null) {
+                                combinedList.add(item);
+                            }
+                        }
+                        checkCompletionListener.onDataChange(dataSnapshot);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        checkCompletionListener.onCancelled(databaseError);
+                    }
+                });
+
+                node11Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            if (item != null) {
+                                combinedList.add(item);
+                            }
+                        }
+                        checkCompletionListener.onDataChange(dataSnapshot);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        checkCompletionListener.onCancelled(databaseError);
+                    }
+                });
+
+                node2Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            if (item != null) {
+                                combinedList.add(item);
+                            }
+                        }
+                        checkCompletionListener.onDataChange(dataSnapshot);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        checkCompletionListener.onCancelled(databaseError);
+                    }
+                });
+
+                node3Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            if (item != null) {
+                                combinedList.add(item);
+                            }
+                        }
+                        checkCompletionListener.onDataChange(dataSnapshot);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        checkCompletionListener.onCancelled(databaseError);
+                    }
+                });
+
+                node4Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            if (item != null) {
+                                combinedList.add(item);
+                            }
+                        }
+                        checkCompletionListener.onDataChange(dataSnapshot);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        checkCompletionListener.onCancelled(databaseError);
+                    }
+                });
+
+                node5Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            if (item != null) {
+                                combinedList.add(item);
+                            }
+                        }
+                        checkCompletionListener.onDataChange(dataSnapshot);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        checkCompletionListener.onCancelled(databaseError);
+                    }
+                });
+
+                node6Ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            if (item != null) {
+                                combinedList.add(item);
+                            }
+                        }
+                        checkCompletionListener.onDataChange(dataSnapshot);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        checkCompletionListener.onCancelled(databaseError);
+                    }
+                });
+
+                break;
+
+            }
+
+            case "Sofa":{
+                DatabaseReference dataRef = FirebaseDatabase.getInstance().getReference(data);
+
+                dataRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        categoryList = new ArrayList<>();
+
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            categoryList.add(item);
+                        }
+
+                        // Set up the adapter with the fetched data
+                        MainAdapter mainAdapter = new MainAdapter(Categories.this, categoryList, Categories.this);
+                        recyclerView.setAdapter(mainAdapter);
+                        mainAdapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        // Handle possible errors
+                    }
+                });
+                break;
+            }
+
+            case "Spatula":{
+                DatabaseReference dataRef = FirebaseDatabase.getInstance().getReference(data);
+
+                dataRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        categoryList = new ArrayList<>();
+
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            categoryList.add(item);
+                        }
+
+                        // Set up the adapter with the fetched data
+                        MainAdapter mainAdapter = new MainAdapter(Categories.this, categoryList, Categories.this);
+                        recyclerView.setAdapter(mainAdapter);
+                        mainAdapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        // Handle possible errors
+                    }
+                });
+                break;
+            }
+
+            case "Refridgerator":{
+                DatabaseReference dataRef = FirebaseDatabase.getInstance().getReference(data);
+
+                dataRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        categoryList = new ArrayList<>();
+
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            categoryList.add(item);
+                        }
+
+                        // Set up the adapter with the fetched data
+                        MainAdapter mainAdapter = new MainAdapter(Categories.this, categoryList, Categories.this);
+                        recyclerView.setAdapter(mainAdapter);
+                        mainAdapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        // Handle possible errors
+                    }
+                });
+                break;
+            }
+
+
+
+            case "Air Fryer":{
+                DatabaseReference dataRef = FirebaseDatabase.getInstance().getReference(data);
+
+                dataRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        categoryList = new ArrayList<>();
+
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            categoryList.add(item);
+                        }
+
+                        // Set up the adapter with the fetched data
+                        MainAdapter mainAdapter = new MainAdapter(Categories.this, categoryList, Categories.this);
+                        recyclerView.setAdapter(mainAdapter);
+                        mainAdapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        // Handle possible errors
+                    }
+                });
+                break;
+            }
+
+
+            case "Gas Stove":{
+                DatabaseReference dataRef = FirebaseDatabase.getInstance().getReference(data);
+
+                dataRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        categoryList = new ArrayList<>();
+
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            categoryList.add(item);
+                        }
+
+                        // Set up the adapter with the fetched data
+                        MainAdapter mainAdapter = new MainAdapter(Categories.this, categoryList, Categories.this);
+                        recyclerView.setAdapter(mainAdapter);
+                        mainAdapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        // Handle possible errors
+                    }
+                });
+                break;
+            }
+
+
+            case "Washing Machine":{
+                DatabaseReference dataRef = FirebaseDatabase.getInstance().getReference(data);
+
+                dataRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        categoryList = new ArrayList<>();
+
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            categoryList.add(item);
+                        }
+
+                        // Set up the adapter with the fetched data
+                        MainAdapter mainAdapter = new MainAdapter(Categories.this, categoryList, Categories.this);
+                        recyclerView.setAdapter(mainAdapter);
+                        mainAdapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        // Handle possible errors
+                    }
+                });
+                break;
+            }
+
+
+            case "Television":{
+                DatabaseReference dataRef = FirebaseDatabase.getInstance().getReference(data);
+
+                dataRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        categoryList = new ArrayList<>();
+
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            categoryList.add(item);
+                        }
+
+                        // Set up the adapter with the fetched data
+                        MainAdapter mainAdapter = new MainAdapter(Categories.this, categoryList, Categories.this);
+                        recyclerView.setAdapter(mainAdapter);
+                        mainAdapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        // Handle possible errors
+                    }
+                });
+                break;
+            }
+
+            case "Cooker":{
+                DatabaseReference dataRef = FirebaseDatabase.getInstance().getReference(data);
+
+                dataRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        categoryList = new ArrayList<>();
+
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            categoryList.add(item);
+                        }
+
+                        // Set up the adapter with the fetched data
+                        MainAdapter mainAdapter = new MainAdapter(Categories.this, categoryList, Categories.this);
+                        recyclerView.setAdapter(mainAdapter);
+                        mainAdapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        // Handle possible errors
+                    }
+                });
+                break;
+            }
+
+            case "Pan":{
+                DatabaseReference dataRef = FirebaseDatabase.getInstance().getReference(data);
+
+                dataRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        categoryList = new ArrayList<>();
+
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            categoryList.add(item);
+                        }
+
+                        // Set up the adapter with the fetched data
+                        MainAdapter mainAdapter = new MainAdapter(Categories.this, categoryList, Categories.this);
+                        recyclerView.setAdapter(mainAdapter);
+                        mainAdapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        // Handle possible errors
+                    }
+                });
+                break;
+            }
+
+            case "Bed":{
+                DatabaseReference dataRef = FirebaseDatabase.getInstance().getReference(data);
+
+                dataRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        categoryList = new ArrayList<>();
+
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            categoryList.add(item);
+                        }
+
+                        // Set up the adapter with the fetched data
+                        MainAdapter mainAdapter = new MainAdapter(Categories.this, categoryList, Categories.this);
+                        recyclerView.setAdapter(mainAdapter);
+                        mainAdapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        // Handle possible errors
+                    }
+                });
+                break;
+            }
+
+            case "Phones":{
+                DatabaseReference dataRef = FirebaseDatabase.getInstance().getReference(data);
+
+                dataRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        categoryList = new ArrayList<>();
+
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            categoryList.add(item);
+                        }
+
+                        // Set up the adapter with the fetched data
+                        MainAdapter mainAdapter = new MainAdapter(Categories.this, categoryList, Categories.this);
+                        recyclerView.setAdapter(mainAdapter);
+                        mainAdapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        // Handle possible errors
+                    }
+                });
+                break;
+            }
+            case "Tabs":{
+                DatabaseReference dataRef = FirebaseDatabase.getInstance().getReference(data);
+
+                dataRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        categoryList = new ArrayList<>();
+
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            categoryList.add(item);
+                        }
+
+                        // Set up the adapter with the fetched data
+                        MainAdapter mainAdapter = new MainAdapter(Categories.this, categoryList, Categories.this);
+                        recyclerView.setAdapter(mainAdapter);
+                        mainAdapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        // Handle possible errors
+                    }
+                });
+                break;
+            }
+            case "Earphones":{
+                DatabaseReference dataRef = FirebaseDatabase.getInstance().getReference(data);
+
+                dataRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        categoryList = new ArrayList<>();
+
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            categoryList.add(item);
+                        }
+
+                        // Set up the adapter with the fetched data
+                        MainAdapter mainAdapter = new MainAdapter(Categories.this, categoryList, Categories.this);
+                        recyclerView.setAdapter(mainAdapter);
+                        mainAdapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        // Handle possible errors
+                    }
+                });
+                break;
+            }
+            case "Headset":{
+                DatabaseReference dataRef = FirebaseDatabase.getInstance().getReference(data);
+
+                dataRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        categoryList = new ArrayList<>();
+
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            categoryList.add(item);
+                        }
+
+                        // Set up the adapter with the fetched data
+                        MainAdapter mainAdapter = new MainAdapter(Categories.this, categoryList, Categories.this);
+                        recyclerView.setAdapter(mainAdapter);
+                        mainAdapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        // Handle possible errors
+                    }
+                });
+                break;
+            }
+            case "Chargers":{
+                DatabaseReference dataRef = FirebaseDatabase.getInstance().getReference(data);
+
+                dataRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        categoryList = new ArrayList<>();
+
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            categoryList.add(item);
+                        }
+
+                        // Set up the adapter with the fetched data
+                        MainAdapter mainAdapter = new MainAdapter(Categories.this, categoryList, Categories.this);
+                        recyclerView.setAdapter(mainAdapter);
+                        mainAdapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        // Handle possible errors
+                    }
+                });
+                break;
+            }
+            case "Laptop":{
+                DatabaseReference dataRef = FirebaseDatabase.getInstance().getReference(data);
+
+                dataRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        categoryList = new ArrayList<>();
+
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            categoryList.add(item);
+                        }
+
+                        // Set up the adapter with the fetched data
+                        MainAdapter mainAdapter = new MainAdapter(Categories.this, categoryList, Categories.this);
+                        recyclerView.setAdapter(mainAdapter);
+                        mainAdapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        // Handle possible errors
+                    }
+                });
+                break;
+            }
+        }
     }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        mainAdapter.startListening();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        mainAdapter.stopListening();
-    }
-
-    @Override
     public void onItemClick(int position) {
 
-
-//        Intent intent = new Intent(Categories.this,ItemDetails.class);
-//        intent.putExtra("name",options.getSnapshots().toString());
-//        intent.putExtra("price",);
-//        intent.putExtra("description",);
-//        intent.putExtra("image",);
     }
 }

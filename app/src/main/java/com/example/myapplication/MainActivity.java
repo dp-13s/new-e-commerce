@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(MainActivity.this,Categories.class);
                 String str = "Women's Clothing";
                 intent1.putExtra("Data",str);
+                intent1.putExtra("sale","0");
                 startActivity(intent1);
             }
         });
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(MainActivity.this,Categories.class);
                 String str = "Women's Footwear";
                 intent1.putExtra("Data",str);
+                intent1.putExtra("sale","0");
                 startActivity(intent1);
             }
         });
@@ -70,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(MainActivity.this,Categories.class);
                 String str = "Fruits";
                 intent1.putExtra("Data",str);
+                intent1.putExtra("sale","0");
                 startActivity(intent1);
             }
         });
@@ -81,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(MainActivity.this,Categories.class);
                 String str = "Vegetables";
                 intent1.putExtra("Data",str);
+                intent1.putExtra("sale","0");
                 startActivity(intent1);
             }
         });
@@ -92,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(MainActivity.this,Categories.class);
                 String str = "Makeup Products";
                 intent1.putExtra("Data",str);
+                intent1.putExtra("sale","0");
                 startActivity(intent1);
             }
         });
@@ -101,8 +106,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent1 = new Intent(MainActivity.this,Categories.class);
-                String str = "Smart Phones";
+                String str = "Phones";
                 intent1.putExtra("Data",str);
+                intent1.putExtra("sale","0");
                 startActivity(intent1);
             }
         });
@@ -114,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(MainActivity.this,Categories.class);
                 String str = "Electronic Accessories";
                 intent1.putExtra("Data",str);
+                intent1.putExtra("sale","0");
                 startActivity(intent1);
             }
         });
@@ -125,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(MainActivity.this,Categories.class);
                 String str = "Soap";
                 intent1.putExtra("Data",str);
+                intent1.putExtra("sale","0");
                 startActivity(intent1);
             }
         });
@@ -135,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(MainActivity.this,Categories.class);
                 String str = "Dairy Products";
                 intent1.putExtra("Data",str);
+                intent1.putExtra("sale","0");
                 startActivity(intent1);
             }
         });
@@ -146,6 +155,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(MainActivity.this,Categories.class);
                 String str = "Men's Clothing";
                 intent1.putExtra("Data",str);
+                intent1.putExtra("sale","0");
                 startActivity(intent1);
             }
         });
@@ -157,6 +167,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(MainActivity.this,Categories.class);
                 String str = "Men's Footwear";
                 intent1.putExtra("Data",str);
+                intent1.putExtra("sale","0");
                 startActivity(intent1);
             }
         });
@@ -168,6 +179,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(MainActivity.this,Categories.class);
                 String str = "Kids Clothing";
                 intent1.putExtra("Data",str);
+                intent1.putExtra("sale","0");
                 startActivity(intent1);
             }
         });
@@ -179,6 +191,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(MainActivity.this,Categories.class);
                 String str = "Kids Footwear";
                 intent1.putExtra("Data",str);
+                intent1.putExtra("sale","0");
                 startActivity(intent1);
             }
         });
@@ -188,8 +201,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent1 = new Intent(MainActivity.this,Categories.class);
-                String str = "Laptops";
+                String str = "Laptop";
                 intent1.putExtra("Data",str);
+                intent1.putExtra("sale","0");
                 startActivity(intent1);
             }
         });
@@ -201,6 +215,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(MainActivity.this,Categories.class);
                 String str = "Clothing";
                 intent1.putExtra("Data",str);
+                intent1.putExtra("sale","0");
                 startActivity(intent1);
             }
         });
@@ -212,6 +227,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(MainActivity.this,Categories.class);
                 String str = "Footwear";
                 intent1.putExtra("Data",str);
+                intent1.putExtra("sale","0");
                 startActivity(intent1);
             }
         });
@@ -223,6 +239,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(MainActivity.this,Categories.class);
                 String str = "Groceries";
                 intent1.putExtra("Data",str);
+                intent1.putExtra("sale","0");
                 startActivity(intent1);
             }
         });
@@ -234,6 +251,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(MainActivity.this,Categories.class);
                 String str = "Beauty Products";
                 intent1.putExtra("Data",str);
+                intent1.putExtra("sale","0");
                 startActivity(intent1);
             }
         });
@@ -245,6 +263,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(MainActivity.this,Categories.class);
                 String str = "Electronics";
                 intent1.putExtra("Data",str);
+                intent1.putExtra("sale","0");
                 startActivity(intent1);
             }
         });
@@ -255,6 +274,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(MainActivity.this,Categories.class);
                 String str = "Home and Kitchen Appliances";
                 intent1.putExtra("Data",str);
+                intent1.putExtra("sale","0");
                 startActivity(intent1);
             }
         });
@@ -266,6 +286,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(MainActivity.this,Categories.class);
                 String str = "Medicine";
                 intent1.putExtra("Data",str);
+                intent1.putExtra("sale","0");
                 startActivity(intent1);
             }
         });
@@ -277,15 +298,67 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(MainActivity.this,Categories.class);
                 String str = "Books";
                 intent1.putExtra("Data",str);
+                intent1.putExtra("sale","0");
                 startActivity(intent1);
             }
         });
 
         imge1=findViewById(R.id.d1);
+        imge1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this,Categories.class);
+                String str = "Makeup Products";
+                intent1.putExtra("Data",str);
+                intent1.putExtra("sale","1");
+                startActivity(intent1);
+            }
+        });
+
         imge2=findViewById(R.id.d2);
+        imge2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this,Categories.class);
+                String str = "Electronic Accessories";
+                intent1.putExtra("Data",str);
+                intent1.putExtra("sale","1");
+                startActivity(intent1);
+            }
+        });
         imge3=findViewById(R.id.d3);
+        imge3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this,Categories.class);
+                String str = "Fruits";
+                intent1.putExtra("Data",str);
+                intent1.putExtra("sale","1");
+                startActivity(intent1);
+            }
+        });
         imge4=findViewById(R.id.d4);
+        imge4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this,Categories.class);
+                String str = "Books";
+                intent1.putExtra("Data",str);
+                intent1.putExtra("sale","1");
+                startActivity(intent1);
+            }
+        });
         imge5=findViewById(R.id.d5);
+        imge5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this,Categories.class);
+                String str = "Clothing";
+                intent1.putExtra("Data",str);
+                intent1.putExtra("sale","1");
+                startActivity(intent1);
+            }
+        });
 
         sub = getResources().getStringArray(R.array.my_array);
         ArrayAdapter<String> adapter=new ArrayAdapter<String>(this, android.R.layout.select_dialog_item,sub);
