@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent1 = new Intent(MainActivity.this,Categories.class);
-                String str = "Soap";
+                String str = "Medical Solutions";
                 intent1.putExtra("Data",str);
                 intent1.putExtra("sale","0");
                 startActivity(intent1);
