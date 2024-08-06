@@ -2,7 +2,6 @@
     <string-array name="my_array">
         <item>Clothing</item>
         <item>Footwear</item>
-        <item>Shoes</item>
         <item>Headset</item>
         <item>Groceries</item>
         <item>Beauty Products</item>
@@ -19,7 +18,6 @@
         <item>Laptop</item>
         <item>Books</item>
         <item>Electronic Accessories</item>
-        <item>Makeup Products</item>
         <item>Fruits</item>
         <item>Vegetables</item>
         <item>Dairy Products</item>
@@ -36,6 +34,8 @@
         <item>Kids Footwear</item>
         <item>Men\'s Clothing</item>
         <item>Men\'s Footwear</item>
+        <item>Women\'s Clothing</item>
+        <item>Women\'s Footwear</item>
         <item>Maskara</item>
         <item>Lipstick</item>
         <item>Highlighter</item>
