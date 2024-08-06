@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent1 = new Intent(MainActivity.this,Categories.class);
-                String str = "Vegetables";
+                String str = "Vegetable";
                 intent1.putExtra("Data",str);
                 intent1.putExtra("sale","0");
                 startActivity(intent1);
@@ -380,6 +380,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,Profile.class);
+                intent.putExtra("name","Elon Musk");
+                intent.putExtra("email","elonmusk@gmail.com");
+                intent.putExtra("phno","1234567890");
+                intent.putExtra("add","Nagerjala, Agartala, 799003");
+
                 startActivity(intent);
                 finish();
             }

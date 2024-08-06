@@ -16,13 +16,15 @@
         <item>Kids Footwear</item>
         <item>Phones</item>
         <item>Laptop</item>
+        <item>Spices</item>
+        <item>Sauce</item>
+        <item>Flour</item>
         <item>Books</item>
         <item>Electronic Accessories</item>
         <item>Fruits</item>
-        <item>Vegetables</item>
         <item>Dairy Products</item>
-        <item>Cereals</item>
         <item>Grains</item>
+        <item>Cooking Oil</item>
         <item>Pulses</item>
         <item>Chargers</item>
         <item>Tabs</item>
@@ -57,6 +59,7 @@
         <item>Television</item>
         <item>Gas Stove</item>
         <item>Sofa</item>
+        <item>Vegetable</item>
         <item>Cooker</item>
         <item>Earphones</item>
     </string-array>
