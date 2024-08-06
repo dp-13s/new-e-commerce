@@ -1,14 +1,18 @@
 package com.example.myapplication;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -22,6 +26,7 @@ public class ItemDetails extends AppCompatActivity {
 
     TextView title,descriptions,quantity,prices;
 
+    RadioButton checkbox;
     ImageButton remove,add;
 
     Button order ;
@@ -31,6 +36,8 @@ public class ItemDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_item_details);
+
+        checkbox = findViewById(R.id.checkbox);
 
         image = findViewById(R.id.item_image);
         prices=findViewById(R.id.item_price);
@@ -65,6 +72,45 @@ public class ItemDetails extends AppCompatActivity {
                 }
             }
         });
+
+
+        order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Check if the radio button is checked
+                if (checkbox.isChecked()) {
+                    // If checked, show the alert dialog
+                    AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+                    builder.setTitle("Confirm Order");
+                    builder.setMessage("Are you sure you want to place the order?");
+
+                    builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+//                            int quan = Integer.parseInt(quantity.getText().toString());
+//                            int pr = Integer.parseInt(prices.getText().toString());
+//                            int fin = quan * pr;
+
+                            Intent intent = new Intent(ItemDetails.this, FinalOrder.class);
+                            startActivity(intent);
+                        }
+                    });
+
+                    builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+
+                    builder.show();
+                } else {
+                    // If not checked, show a toast message
+                    Toast.makeText(view.getContext(), "Please select payment options before proceeding", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override

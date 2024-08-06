@@ -35,7 +35,7 @@ import java.util.List;
 
 public class Categories extends AppCompatActivity implements RecyclerViewInterface{
 
-    TextView heading;
+    TextView heading,address;
     categorymodel categoryModel;
 
     String[] sub;
@@ -51,6 +51,9 @@ public class Categories extends AppCompatActivity implements RecyclerViewInterfa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        address= findViewById(R.id.textView3);
+
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_categories);
 

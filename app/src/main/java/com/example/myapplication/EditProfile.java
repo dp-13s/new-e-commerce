@@ -25,6 +25,8 @@ public class EditProfile extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_edit_profile);
 
+
+
         username = findViewById(R.id.edit_username);
         email = findViewById(R.id.edit_email);
         phno = findViewById(R.id.edit_phno);

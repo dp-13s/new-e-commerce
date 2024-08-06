@@ -77,6 +77,10 @@ public class Profile extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Profile.this,MainActivity.class);
+                intent.putExtra("name",name.getText().toString());
+                intent.putExtra("phno",phno.getText().toString());
+                intent.putExtra("add",add.getText().toString());
+                intent.putExtra("email",email.getText().toString());
                 startActivity(intent);
                 finish();
             }

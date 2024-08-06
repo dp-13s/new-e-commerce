@@ -371,9 +371,12 @@ public class MainActivity extends AppCompatActivity {
                 String data = search.getText().toString();
                 Intent intent1 = new Intent(MainActivity.this,Categories.class);
                 intent1.putExtra("Data",data);
+
+
                 startActivity(intent1);
             }
         });
+
 
         profile = findViewById(R.id.profile);
         profile.setOnClickListener(new View.OnClickListener() {
@@ -383,8 +386,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("name","Elon Musk");
                 intent.putExtra("email","elonmusk@gmail.com");
                 intent.putExtra("phno","1234567890");
-                intent.putExtra("add","Nagerjala, Agartala, 799003");
-
+                intent.putExtra("add","Nagerjala, Agartala, Tripura");
                 startActivity(intent);
                 finish();
             }

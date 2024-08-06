@@ -63,9 +63,10 @@
         <item>Cooker</item>
         <item>Earphones</item>
     </string-array>
-    <string name="app_name">New E Commerce Application</string>
+    <string name="app_name">Gleam</string>
 
     <string name="first_slide">Choose Your Products</string>
+
     <string name="second_slide">Fast Delivery</string>
     <string name="third_slide">Good Service</string>
 
