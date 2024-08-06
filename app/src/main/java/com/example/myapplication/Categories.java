@@ -878,6 +878,87 @@ public class Categories extends AppCompatActivity implements RecyclerViewInterfa
                 break;
             }
 
+            case "Brush":{
+                DatabaseReference dataRef = FirebaseDatabase.getInstance().getReference(data);
+
+                dataRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        categoryList = new ArrayList<>();
+
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            categoryList.add(item);
+                        }
+
+                        // Set up the adapter with the fetched data
+                        MainAdapter mainAdapter = new MainAdapter(Categories.this, categoryList, Categories.this);
+                        recyclerView.setAdapter(mainAdapter);
+                        mainAdapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        // Handle possible errors
+                    }
+                });
+                break;
+            }
+
+            case "Compact":{
+                DatabaseReference dataRef = FirebaseDatabase.getInstance().getReference(data);
+
+                dataRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        categoryList = new ArrayList<>();
+
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            categoryList.add(item);
+                        }
+
+                        // Set up the adapter with the fetched data
+                        MainAdapter mainAdapter = new MainAdapter(Categories.this, categoryList, Categories.this);
+                        recyclerView.setAdapter(mainAdapter);
+                        mainAdapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        // Handle possible errors
+                    }
+                });
+                break;
+            }
+
+            case "Consealer":{
+                DatabaseReference dataRef = FirebaseDatabase.getInstance().getReference(data);
+
+                dataRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        categoryList = new ArrayList<>();
+
+                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                            categorymodel item = snapshot.getValue(categorymodel.class);
+                            categoryList.add(item);
+                        }
+
+                        // Set up the adapter with the fetched data
+                        MainAdapter mainAdapter = new MainAdapter(Categories.this, categoryList, Categories.this);
+                        recyclerView.setAdapter(mainAdapter);
+                        mainAdapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        // Handle possible errors
+                    }
+                });
+                break;
+            }
+
             case "Kids Books":{
                 DatabaseReference dataRef = FirebaseDatabase.getInstance().getReference(data);
 
