@@ -26,7 +26,6 @@ public class ItemDetails extends AppCompatActivity {
 
     TextView title,descriptions,quantity,prices;
 
-    RadioButton checkbox;
     ImageButton remove,add;
 
     Button order ;
@@ -37,7 +36,6 @@ public class ItemDetails extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_item_details);
 
-        checkbox = findViewById(R.id.checkbox);
 
         image = findViewById(R.id.item_image);
         prices=findViewById(R.id.item_price);
@@ -77,40 +75,13 @@ public class ItemDetails extends AppCompatActivity {
         order.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Check if the radio button is checked
-                if (checkbox.isChecked()) {
-                    // If checked, show the alert dialog
-                    AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
-                    builder.setTitle("Confirm Order");
-                    builder.setMessage("Are you sure you want to place the order?");
-
-                    builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-//                            int quan = Integer.parseInt(quantity.getText().toString());
-//                            int pr = Integer.parseInt(prices.getText().toString());
-//                            int fin = quan * pr;
-
-                            Intent intent = new Intent(ItemDetails.this, FinalOrder.class);
-                            startActivity(intent);
-                        }
-                    });
-
-                    builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    });
-
-                    builder.show();
-                } else {
-                    // If not checked, show a toast message
-                    Toast.makeText(view.getContext(), "Please select payment options before proceeding", Toast.LENGTH_SHORT).show();
-                }
+                Intent intent = new Intent(ItemDetails.this, OrderSummary.class);
+                intent.putExtra("name",title.getText().toString());
+                intent.putExtra("price",prices.getText().toString());
+                intent.putExtra("quantity",quantity.getText().toString());
+                startActivity(intent);
             }
         });
-
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
